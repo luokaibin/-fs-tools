@@ -11,7 +11,7 @@ const writeFileStream = require('./writeFileStream');
 const copyDirOrFile = require('./copyDirOrFile');
 
 
-exports = {
+module.exports = {
   getCurrPath,
   isDirOrFile,
   isDirExists,
