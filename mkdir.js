@@ -3,9 +3,9 @@ const {resolve} = require('path');
 const getCurrPath = require('./getCurrPath');
 
 const mkdir = (path) => {
-  const currPath = getCurrPath()
+  const currPath = resolve(getCurrPath(),path)
   try {
-    fs.mkdirSync(resolve(currPath,path), {recursive: true})
+    fs.mkdirSync(currPath, {recursive: true})
     return true;
   } catch (error) {
     throw error

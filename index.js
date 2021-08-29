@@ -9,8 +9,10 @@ const writeFile = require('./writeFile');
 const readFileStream = require('./readFileStream');
 const writeFileStream = require('./writeFileStream');
 const copyDirOrFile = require('./copyDirOrFile');
-
-
+// copyDirOrFile('/Users/luokaibin/Documents/toolNode/node', '/Users/luokaibin/Documents/toolNode/test', (content,filePath, fileName) => {
+//   console.log(content.toString())
+//   return content
+// })
 module.exports = {
   getCurrPath,
   isDirOrFile,

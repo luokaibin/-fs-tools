@@ -21,7 +21,7 @@ pangFs.getCurrPath()
 | 方法            | 入参                                                         | 出参                                | 说明                        |
 | --------------- | ------------------------------------------------------------ | ----------------------------------- | --------------------------- |
 | getCurrPath     | -                                                            | 当前路径                            | 获取当前CMD命令执行路径     |
-| copyDirOrFile   | - src: string 要复制的源文件或者原目录。基于当前项目的相对路径，不需要传入完整路径。<br />- desc: string 要复制到的一个目标目录，必须是一个存在的目录，必须是目录，路径是基于当前项目的相对路径，不需要传入完整路径。 | 成功后返回 true ，失败会 throw 错误 | 复制文件或目录              |
+| copyDirOrFile   | - src: string 要复制的源文件或者原目录。基于当前项目的相对路径，不需要传入完整路径。<br />- desc: string 要复制到的一个目标目录，必须是一个存在的目录，必须是目录，路径是基于当前项目的相对路径，不需要传入完整路径。<br />- updateFileContent?: (content: Buffer, filePath: string, fileName: string) => Buffer 在对文件进行复制时，可以传入updateFileContent来修改文件内容，updateFileContent 是一个方法 接收三个参数 content 类型 Buffer，为文件内容 filePath 为文件路径 fileName 为文件名，修改之后需要返回修改后的内容，类型为 Buffer | 成功后返回 true ，失败会 throw 错误 | 复制文件或目录              |
 | delDirOrFile    | - path: string 要删除的目录或文件，如果删除的是目录，会递归删除这个目录下的所有子目录和文件。基于当前项目的相对路径，不需要传入完整路径。<br />- isCurrDir: boolean 如果要删除的对象是文件，这个参数会被忽略。如果传入的是一个目录，例如：a/b/c/d ，是否删除 d 本身，默认 true | 删除成功返回 true                   | 删除目录或文件              |
 | isDirExists     | - path: string 要校验的路径。基于当前项目的相对路径，不需要传入完整路径。 | 存在返回 true；不存在返回 false     | 判断路径是否存在            |
 | isDirOrFile     | - path: string 要校验的路径。基于当前项目的相对路径，不需要传入完整路径。 | 目录返回 directory；文件返回 file   | 判断路径是一个文件还是目录  |
